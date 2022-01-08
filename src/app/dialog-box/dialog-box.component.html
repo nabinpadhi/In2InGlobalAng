@@ -1,10 +1,10 @@
 <div mat-dialog-content>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="Company Name" matInput [(ngModel)]="local_data.companyname">    
+    <input id="txtCompanyName" placeholder="Company Name" matInput [(ngModel)]="local_data.companyname">    
   </mat-form-field>
 
   <mat-form-field *ngIf="action != 'Delete';">
-    <input placeholder="LOB" matInput [(ngModel)]="local_data.lob">
+    <input id="txtLOB" placeholder="LOB" matInput [(ngModel)]="local_data.lob">
   </mat-form-field>
 
   

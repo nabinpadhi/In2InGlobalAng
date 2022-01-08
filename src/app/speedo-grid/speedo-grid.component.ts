@@ -5,6 +5,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 import {Sort} from '@angular/material/sort';
 import {MatSortModule} from '@angular/material/sort';
+import { NgModel } from '@angular/forms';
+import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
+
+
+declare function CheckNull(FieldValueToValidate: string,message: string) : any;
+declare function ShowError(rs_ErrorMessage : string) : any;
+declare var in2in5:any;
+declare let Error_Message : any;
+declare let Error_Count : any  ;
+
+
 export interface CompanyData {
   companyname: string;
   lob: string;
@@ -28,6 +39,8 @@ export class SpeedoGridComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {
     this.sortedData = ELEMENT_DATA.slice();
+    Error_Count = 1;
+    Error_Message = "";
   }
 
   openDialog(action:any,obj:any) {
@@ -39,7 +52,21 @@ export class SpeedoGridComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if(result.event == 'Add'){
+        
+        if(!result.data["companyname"])
+        { 
+          Error_Count = 1;
+          Error_Message = "";          
+            CheckNull('', in2in5);
+         
+            if (Error_Message != "") {
+                ShowError(Error_Message);               
+            }        
+        }
+        else
+        {
         this.addRowData(result.data);
+        }
       }else if(result.event == 'Update'){
         this.updateRowData(result.data);
       }else if(result.event == 'Delete'){
