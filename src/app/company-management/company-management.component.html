@@ -1,0 +1,20 @@
+<form id="form1" runat="server">
+  <div layout-align="center center" style="width: 80%; border: 1px solid black; border-radius: 5px; margin-top: 10px;">
+    <div class="header" style="border: 1px solid black; border-radius: 5px;height:40px;padding-top:10px;">
+      <span class="menu_frame_title">Company Management</span>
+    </div>
+    <div style="position:relative;padding-bottom: 30px;margin-top:-50px;display:flex;align-items:center;justify-content:center;">
+      <div style="width: 90%; border: 1px solid black; border-radius: 5px; margin-top: 10px;display:flex;align-items:center;justify-content:center;">
+        <table>
+          <tr>
+            <td>
+              <app-speedo-grid></app-speedo-grid>
+            </td>
+        </table>
+      </div>
+      <ng-container *ngIf="apiError">
+        <p class="APIErrorText">Interface is not live or something went wrong.</p>
+      </ng-container>
+    </div>
+  </div>
+</form>

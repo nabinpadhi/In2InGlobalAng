@@ -1,0 +1,33 @@
+
+.header {
+    color: white;
+    background-color: #4472c4;
+    border: 1px solid #dddddd;    
+    text-indent: 5px;    
+    border-radius: 5px;
+    text-align:center;
+    
+}  
+.menu_frame_title {
+    font-size: 20px;
+}
+.APIErrorText{
+
+    text-align:center;
+    font-size: 20px;
+    color: red;
+}
+[fieldtype ~="readonly"] {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #d6d2d2 no-repeat 2px 2px;
+    padding: 1px 1px 1px 5px;
+    border: 1px solid #1c4f8a;
+    width: 90%;
+    height: 30px;
+    display: inline-block;
+    cursor: url("../../assets/images/no-pencil-sign.png"),auto;
+    color: blueviolet;
+}

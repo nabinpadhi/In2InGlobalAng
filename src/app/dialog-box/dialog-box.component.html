@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="Company Name" matInput [(ngModel)]="local_data.companyname">    
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input placeholder="LOB" matInput [(ngModel)]="local_data.lob">
+  </mat-form-field>
+
+  
+  <ng-template #elseTemplate>
+    Are you sure, you want to delete <b>{{local_data.companyname}}</b>?
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-raised-button color="primary">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
